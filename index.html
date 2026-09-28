@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LuwesChat - Chat AI Anti Kaku</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sidebar" id="sidebar">
+  <div class="logo">💬 <span>LuwesChat</span></div>
+  <button class="btn-new" onclick="openModal()">+ Bikin Karakter Baru</button>
+  <div class="char-list" id="charList"></div>
+</div>
+
+<div class="main">
+  <div class="chat-header" id="chatHeader" style="display:none">
+    <img id="headerAvatar" src="">
+    <div>
+      <div style="font-weight:600" id="headerName">-</div>
+      <div class="status">● online • lagi gabut</div>
+    </div>
+  </div>
+  <div class="messages" id="messages">
+    <div class="empty" id="emptyState">
+      <div style="font-size:42px">✨</div>
+      <p>Belum ada karakter, bikin dulu bro</p>
+    </div>
+  </div>
+  <div class="input-area" id="inputArea" style="display:none">
+    <input id="chatInput" placeholder="Ketik sesuatu..." onkeydown="if(event.key==='Enter')sendMessage()">
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h3>Bikin Karakter Lu</h3>
+    <div class="field"><label>Nama Karakter</label><input id="cName" placeholder="Contoh: Aurel, Zahra"></div>
+    <div class="field"><label>Gender / Vibe</label>
+      <select id="cGender">
+        <option value="cewek">Cewek - manja</option>
+        <option value="cewek_cuek">Cewek - cuek jutek</option>
+        <option value="cewek_clingy">Cewek - clingy bucin</option>
+        <option value="cowok">Cowok - santai</option>
+      </select>
+    </div>
+    <div class="field"><label>Personality</label><textarea id="cPersonality" placeholder="Contoh: 19th, anak jaksel, suka ngambek tapi gampang baikan, ngomongnya pake aku-kamu..."></textarea></div>
+    <div class="field"><label>Foto Avatar</label><input type="file" id="cAvatar" accept="image/*"></div>
+    <div class="row" style="margin-top:18px">
+      <button onclick="closeModal()" class="btn-cancel">Batal</button>
+      <button onclick="saveCharacter()" class="btn-save">Simpan</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
